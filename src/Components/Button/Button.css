@@ -1,0 +1,66 @@
+.ButtonBlue,
+.ButtonRed,
+.FlatButton {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  transition: 0.4s all;
+}
+
+.ButtonBlue:active {
+  background: rgb(0, 88, 140);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 88, 140, 1) 0%,
+    rgb(0, 62, 168) 50%,
+    rgba(0, 55, 130, 1) 100%
+  );
+}
+
+.ButtonRed:active {
+  background: rgb(143, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(143, 0, 0, 1) 0%,
+    rgb(185, 0, 0) 50%,
+    rgba(144, 0, 0, 1) 100%
+  );
+}
+
+.ButtonBlue {
+  /* box-shadow: inset 0px 1px 0px 4px #000000ba; */
+  /* border: 4px solid #0000004f; */
+  box-shadow: inset 1px 1px 7px 4px #000000ba;
+  background: rgb(0, 159, 255);
+  background: linear-gradient(
+    0deg,
+    rgb(0 112 255) 0%,
+    rgb(0 56 181) 50%,
+    rgba(0, 159, 255, 1) 100%
+  );
+}
+
+.ButtonRed {
+  /* box-shadow: inset 0px 1px 6px 4px #000000ba; */
+  /* border: 4px solid #0000004f; */
+  box-shadow: inset 1px 1px 7px 4px #000000ba;
+  background: rgb(255, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(161, 0, 0, 1) 50%,
+    rgba(255, 0, 0, 1) 100%
+  );
+}
+
+.FlatButton {
+  border: 2px solid;
+}
+
+.FlatButton:hover {
+  border: 5px dotted;
+}

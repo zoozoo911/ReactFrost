@@ -1,0 +1,54 @@
+.DialogBoxLight,
+.DialogBoxDark {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 4px 20px 17px #0000005c;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5px;
+  padding-bottom: 25px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 30px;
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+}
+
+.DialogBoxDark {
+  background-color: rgb(45 45 45 / 81%);
+}
+
+.DialogBoxLight {
+  background-color: rgba(255, 255, 255, 0.63);
+}
+
+.ButtonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: fit-content;
+  width: 100%;
+  gap: 5px;
+}
+
+.TitleDark,
+.BodyDark,
+.TitleLight,
+.BodyLight {
+  font-weight: 100;
+}
+
+.TitleDark,
+.BodyDark {
+  color: white;
+}
+
+.TitleLight,
+.BodyLight {
+  color: black;
+}

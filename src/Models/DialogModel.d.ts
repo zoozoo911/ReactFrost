@@ -8,6 +8,7 @@ type DialogProps = {
   mode: "dark" | "light";
   buttons: ButtonModel.ButtonProps[];
   style: React.CSSProperties;
+  mode?: "light" | "dark";
 } & Events;
 
 export default DialogProps;

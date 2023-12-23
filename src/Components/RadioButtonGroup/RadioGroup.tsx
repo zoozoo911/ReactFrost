@@ -4,8 +4,10 @@ import "./Radio.css";
 import RadioButton from "./RadioButton";
 
 const RadioGroup: React.FC<RadioGroupProps> = ({
+  id,
   children,
   onInteracted,
+  mode,
   style,
   ...events
 }) => {
@@ -26,7 +28,7 @@ const RadioGroup: React.FC<RadioGroupProps> = ({
     if (onInteracted) onInteracted(value, key, label);
   };
   return React.cloneElement(
-    <div style={style} className="RadioGroup">
+    <div id={id} style={style} className="RadioGroup">
       {React.Children.map(children, (element, index) => {
         return (
           <RadioButton
@@ -37,7 +39,13 @@ const RadioGroup: React.FC<RadioGroupProps> = ({
             value={element.props.value}
             label={element.props.label}
             onSelect={handleSelected}
-            classname={radioStates[index] ? "RadioSelected" : "RadioUnSelected"}
+            classname={
+              radioStates[index]
+                ? "RadioSelected"
+                : mode == "dark"
+                ? "RadioUnSelectedDark"
+                : "RadioUnSelectedLight"
+            }
           />
         );
       })}

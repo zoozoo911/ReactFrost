@@ -3,25 +3,30 @@ import React from "react";
 import "./Slider.css";
 import SliderProps from "../../Models/SliderModel";
 
-const Slider: React.FC<SliderProps> = (props) => {
-  const { style, min, max, step, type, ...events } = props;
-  const [externalCSS, setExternalCSS] = useState<React.CSSProperties>({});
-
-  useEffect(() => {
-    setExternalCSS(style);
-  }, [props]);
-
+const Slider: React.FC<SliderProps> = ({
+  style,
+  min,
+  max,
+  step,
+  mode,
+  type,
+  ...events
+}) => {
   return React.cloneElement(
-    <div>
-      <input
-        style={externalCSS}
-        type="range"
-        min={min}
-        step={step}
-        max={max}
-        className={type == "thin" ? "sliderThin" : "slider"}
-      />
-    </div>,
+    <input
+      style={style}
+      type="range"
+      min={min}
+      step={step}
+      max={max}
+      className={
+        type == "thin"
+          ? "sliderThin"
+          : mode == "light"
+          ? "sliderBroadLight"
+          : "sliderBroadDark"
+      }
+    />,
     events
   );
 };

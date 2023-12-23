@@ -1,15 +1,28 @@
-.slider {
-  appearance: none;
-  height: 30px;
-  box-shadow: inset 0px 0px 20px 2px #00000085;
-  -webkit-backdrop-filter: blur(15px);
-  backdrop-filter: blur(3px);
+.sliderBroadLight {
   background: linear-gradient(
     112deg,
     rgb(157 157 157 / 46%) 4%,
     rgb(75 75 75 / 34%) 67%
   );
-  border: 5px solid #d1d1d1e6;
+}
+
+.sliderBroadDark {
+  background: linear-gradient(
+    112deg,
+    rgb(73 73 73 / 46%) 4%,
+    rgb(75 75 75 / 34%) 67%
+  );
+}
+
+.sliderBroadLight,
+.sliderBroadDark,
+.sliderThin {
+  appearance: none;
+  height: 30px;
+  box-shadow: inset 0px 0px 20px 11px #00000052;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(3px);
+  /* border: 5px solid #d1d1d1e6; */
   border-radius: 20px;
   padding-left: 5px;
   padding-right: 2px;
@@ -17,7 +30,8 @@
   cursor: pointer;
 }
 
-.slider::-webkit-slider-thumb,
+.sliderBroadDark::-webkit-slider-thumb,
+.sliderBroadLight::-webkit-slider-thumb,
 .sliderThin::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -32,7 +46,8 @@
   );
 }
 
-.slider::-webkit-slider-thumb {
+.sliderBroadDark::-webkit-slider-thumb,
+.sliderBroadLight::-webkit-slider-thumb {
   box-shadow: 0px 1px 6px 4px #08080894;
 }
 

@@ -6,6 +6,7 @@ type SliderProps = {
   max: number;
   step: number;
   type: "thin" | "broad";
+  mode?: "light" | "dark";
   style: React.CSSProperties;
 } & Events;
 

@@ -6,13 +6,15 @@
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(3px);
   transition: 1s all;
-  box-shadow: 1px 1px 11px 4px rgba(0, 0, 0, 0.418);
+  box-shadow: inset 1px 1px 11px 4px rgba(0, 0, 0, 0.418);
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
-.RadioUnSelected,
+.RadioUnSelectedLight,
+.RadioUnSelectedDark,
 .RadioSelected {
   width: 20px;
   height: 20px;
@@ -29,8 +31,12 @@
   );
 }
 
-.RadioUnSelected {
-  background-color: aliceblue;
+.RadioUnSelectedDark {
+  background-color: rgb(67 67 67);
+}
+
+.RadioUnSelectedLight {
+  background-color: #d9d9d980;
 }
 
 .RadioButtonContainer {

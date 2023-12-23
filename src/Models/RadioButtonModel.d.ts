@@ -1,6 +1,5 @@
 type RadioButtonProps = {
   label: string;
-  // checked: boolean;
   value: any;
   onSelect?: (label: string, value: any, key: number, checked: boolean) => void;
   index?: number;
@@ -9,6 +8,7 @@ type RadioButtonProps = {
     color?: string;
   };
   checked: boolean;
+  mode?: "light" | "dark";
 };
 
 export default RadioButtonProps;

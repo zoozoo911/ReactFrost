@@ -22,6 +22,7 @@ type ButtonProps = {
   type: "normal" | "cancel";
   mode: "3D" | "flat";
   style: React.CSSProperties;
+  mode?: "light" | "dark";
 } & Events;
 
 export default ButtonProps;

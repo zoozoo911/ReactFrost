@@ -3,25 +3,52 @@ import Dialog from "./Components/Dialog/Dialog";
 import RadioButton from "./Components/RadioButtonGroup/RadioButton";
 import RadioGroup from "./Components/RadioButtonGroup/RadioGroup";
 import Slider from "./Components/Slider/Slider";
+import Pane from "./Components/Pane/Pane";
 
 function App() {
   return (
     <div className="App">
-      <RadioGroup
-        onInteracted={(value, index, label) => {
-          alert("label:" + label + "\nvalue:" + value + "\nindex:" + index);
-        }}
+      <Pane
         style={{
           position: "absolute",
-          left: "10%",
-          top: "16%",
-          width: "fit-content",
-          height: "fit-content",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-around",
+          gap: "10px",
+          alignItems: "flex-start",
+          right: "30%",
+          bottom: "50%",
+          height: "400px",
+          width: "340px",
         }}
+        mode="light"
       >
-        <RadioButton checked={false} label="first rb" value={123} />
-        <RadioButton checked={false} label="second rb" value={123} />
-      </RadioGroup>
+        <RadioGroup
+          onInteracted={(value, index, label) => {
+            console.log("label:" + label, "value:" + value, "index:" + index);
+          }}
+          style={{
+            color: "black",
+            position: "relative",
+            width: "fit-content",
+            height: "fit-content",
+          }}
+        >
+          <RadioButton checked={false} label="first rb" value={123} />
+          <RadioButton checked={false} label="second rb" value={123} />
+        </RadioGroup>
+        <Slider
+          min={1}
+          max={100}
+          step={1}
+          type="broad"
+          style={{
+            position: "relative",
+            width: "100%",
+          }}
+        />
+      </Pane>
+
       <Dialog
         title="Hello"
         body="example text"
@@ -38,7 +65,7 @@ function App() {
         }}
         buttons={[
           {
-            onClick: () => alert("button 1"),
+            onClick: () => console.log("button 1"),
             label: "test",
             type: "normal",
             mode: "3D",
@@ -49,7 +76,7 @@ function App() {
             },
           },
           {
-            onClick: () => alert("button 2"),
+            onClick: () => console.log("button 2"),
             label: "test",
             type: "cancel",
             mode: "3D",
@@ -62,20 +89,6 @@ function App() {
             },
           },
         ]}
-      />
-      <Slider
-        min={1}
-        max={100}
-        step={1}
-        type="broad"
-        style={{
-          position: "absolute",
-          width: "300px",
-          minWidth: "340px",
-          right: "50%",
-          bottom: "50%",
-          transform: "translate(50%,50%) rotate(90deg)",
-        }}
       />
     </div>
   );

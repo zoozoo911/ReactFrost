@@ -1,10 +1,27 @@
 import "./App.css";
 import Dialog from "./Components/Dialog/Dialog";
+import RadioButton from "./Components/RadioButtonGroup/RadioButton";
+import RadioGroup from "./Components/RadioButtonGroup/RadioGroup";
 import Slider from "./Components/Slider/Slider";
 
 function App() {
   return (
     <div className="App">
+      <RadioGroup
+        onInteracted={(value, index, label) => {
+          alert("label:" + label + "\nvalue:" + value + "\nindex:" + index);
+        }}
+        style={{
+          position: "absolute",
+          left: "10%",
+          top: "16%",
+          width: "fit-content",
+          height: "fit-content",
+        }}
+      >
+        <RadioButton checked={false} label="first rb" value={123} />
+        <RadioButton checked={false} label="second rb" value={123} />
+      </RadioGroup>
       <Dialog
         title="Hello"
         body="example text"

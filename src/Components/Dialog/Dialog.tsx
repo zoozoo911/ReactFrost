@@ -6,22 +6,17 @@ import React from "react";
 
 const Dialog: React.FC<DialogProps> = (props) => {
   const { style, title, mode, body, buttons, ...events } = props;
-  const [externalCSS, setExternalCSS] = useState<React.CSSProperties>({});
-
-  useEffect(() => {
-    setExternalCSS(style);
-  }, [props]);
 
   return React.cloneElement(
     <div
-      style={externalCSS}
+      style={style}
       className={mode == "dark" ? "DialogBoxDark" : "DialogBoxLight"}
     >
       <h1 className={mode == "dark" ? "TitleDark" : "TitleLight"}>{title}</h1>
       <h2 className={mode == "dark" ? "BodyDark" : "BodyLight"}>{body}</h2>
       <div className="ButtonContainer">
         {buttons.map((button, index) => {
-          return <Button {...button} />;
+          return <Button key={index} {...button} />;
         })}
       </div>
     </div>,

@@ -1,6 +1,7 @@
 import Events from "./EventModel";
 
 type SliderProps = {
+  id?: string;
   min: number;
   max: number;
   step: number;

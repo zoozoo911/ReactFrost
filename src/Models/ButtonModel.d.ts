@@ -17,6 +17,7 @@ type CustomCSS = {
 };
 
 type ButtonProps = {
+  id?: string;
   label: string;
   type: "normal" | "cancel";
   mode: "3D" | "flat";

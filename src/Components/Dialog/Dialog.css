@@ -2,7 +2,7 @@
 .DialogBoxDark {
   display: flex;
   flex-direction: column;
-  box-shadow: 1px 4px 20px 17px #0000005c;
+  box-shadow: 1px 4px 20px 7px #0000005c;
   align-items: center;
   justify-content: space-between;
   padding-top: 5px;
@@ -23,7 +23,7 @@
 }
 
 .DialogBoxLight {
-  background-color: rgba(255, 255, 255, 0.63);
+  background-color: #ffffff70;
 }
 
 .ButtonContainer {

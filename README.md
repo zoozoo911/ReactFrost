@@ -12,7 +12,8 @@ npm i
 
 ## Usage
 
-See [Documentation](https://thankful-hook-f7e.notion.site/ReactFrost-Documentation-b91ff01cb99641778030ea759f27e4e2)
+ [Documentation](https://thankful-hook-f7e.notion.site/ReactFrost-Documentation-b91ff01cb99641778030ea759f27e4e2)
+ should give you a guide to using different Components offered by this Library and in order to use it, since this project is still in development, for testing purposes follow [Installation](#installation) and then add/edit and test out components in the App.tsx file on your local machine.
 
 ## **Contributing**
 

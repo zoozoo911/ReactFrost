@@ -10,6 +10,7 @@ const Slider: React.FC<SliderProps> = ({
   step,
   mode,
   type,
+  className,
   ...events
 }) => {
   return React.cloneElement(
@@ -21,10 +22,10 @@ const Slider: React.FC<SliderProps> = ({
       max={max}
       className={
         type == "thin"
-          ? "sliderThin"
+          ? "sliderThin" + " " + className
           : mode == "light"
-          ? "sliderBroadLight"
-          : "sliderBroadDark"
+          ? "sliderBroadLight" + " " + className
+          : "sliderBroadDark" + " " + className
       }
     />,
     events

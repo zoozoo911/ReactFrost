@@ -25,7 +25,7 @@ function App() {
           type="broad"
           style={{
             position: "relative",
-            width: "100%",
+            width: "80%",
           }}
         />
       </Pane>

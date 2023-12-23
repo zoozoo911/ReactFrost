@@ -15,8 +15,18 @@ function App() {
           }}
           className="RadioGroupCSS"
         >
-          <RadioButton checked={false} label="first rb" value={123} />
-          <RadioButton checked={false} label="second rb" value={123} />
+          <RadioButton
+            color="black"
+            checked={false}
+            label="first rb"
+            value={123}
+          />
+          <RadioButton
+            color="black"
+            checked={false}
+            label="second rb"
+            value={123}
+          />
         </RadioGroup>
         <Slider
           min={1}

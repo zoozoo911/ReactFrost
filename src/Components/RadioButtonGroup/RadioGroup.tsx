@@ -33,7 +33,7 @@ const RadioGroup: React.FC<RadioGroupProps> = ({
       {React.Children.map(children, (element, index) => {
         return (
           <RadioButton
-            style={style?.color ? { color: style?.color } : {}}
+            color={element.props.color}
             key={index}
             checked={element.props.checked}
             index={index}

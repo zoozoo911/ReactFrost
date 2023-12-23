@@ -8,6 +8,7 @@ type RadioButtonProps = {
     color?: string;
   };
   checked: boolean;
+  color: string;
   mode?: "light" | "dark";
 };
 

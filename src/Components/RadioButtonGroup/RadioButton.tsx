@@ -10,6 +10,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   index,
   onSelect,
   checked,
+  color,
   ...events
 }) => {
   const [isChecked, setChecked] = useState<boolean>(checked);
@@ -24,10 +25,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
       >
         <div className={classname}></div>
       </div>
-      <div
-        style={style ? { color: style.color } : {}}
-        className="RadioButtonLabel"
-      >
+      <div style={{ color: color }} className="RadioButtonLabel">
         {label}
       </div>
     </div>,

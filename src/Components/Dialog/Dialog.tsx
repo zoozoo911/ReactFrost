@@ -4,13 +4,23 @@ import DialogProps from "../../Models/DialogModel";
 import { useEffect, useState } from "react";
 import React from "react";
 
-const Dialog: React.FC<DialogProps> = (props) => {
-  const { style, title, mode, body, buttons, ...events } = props;
-
+const Dialog: React.FC<DialogProps> = ({
+  style,
+  title,
+  mode,
+  body,
+  buttons,
+  className,
+  ...events
+}) => {
   return React.cloneElement(
     <div
       style={style}
-      className={mode == "dark" ? "DialogBoxDark" : "DialogBoxLight"}
+      className={
+        mode == "dark"
+          ? "DialogBoxDark" + " " + className
+          : "DialogBoxLight" + " " + className
+      }
     >
       <h1 className={mode == "dark" ? "TitleDark" : "TitleLight"}>{title}</h1>
       <h2 className={mode == "dark" ? "BodyDark" : "BodyLight"}>{body}</h2>

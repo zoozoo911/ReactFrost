@@ -5,8 +5,9 @@ type RadioGroupProps = {
   id?: string;
   children: ReactNode;
   onInteracted?: (value: any, index: number, label: string) => void;
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
   mode?: "light" | "dark";
+  className?: string;
 } & Omit<Events, "onChange" | "onSubmit">;
 
 export default RadioGroupProps;

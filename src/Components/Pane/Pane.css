@@ -1,0 +1,15 @@
+.PaneLight,
+.PaneDark {
+  box-shadow: 1px 4px 20px 7px #0000005c;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border-radius: 30px;
+}
+
+.PaneDark {
+  background-color: rgb(45 45 45 / 81%);
+}
+
+.PaneLight {
+  background-color: #ffffff70;
+}

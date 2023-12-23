@@ -20,3 +20,36 @@
 ::-webkit-scrollbar {
   color: transparent;
 }
+
+.RadioGroupCSS {
+  color: black;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.Pane {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+  align-items: flex-start;
+  right: 30%;
+  padding: 20px;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  height: 400px;
+  width: 340px;
+}
+
+.DialogCSS {
+  position: absolute;
+  height: fit-content;
+  min-height: 400px;
+  width: fit-content;
+  min-width: 340px;
+  right: 70%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+}

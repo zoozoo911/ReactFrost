@@ -21,7 +21,8 @@ type ButtonProps = {
   label: string;
   type: "normal" | "cancel";
   mode: "3D" | "flat";
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
+  className?: string;
   mode?: "light" | "dark";
 } & Events;
 

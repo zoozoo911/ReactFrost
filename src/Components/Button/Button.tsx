@@ -4,7 +4,7 @@ import ButtonProps from "../../Models/ButtonModel";
 import "./Button.css";
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const { style, label, type, mode, ...events } = props;
+  const { style = {}, label, type, mode, ...events } = props;
   const [customCSS, setCustomCSS] = useState<React.CSSProperties>({});
 
   useEffect(() => {

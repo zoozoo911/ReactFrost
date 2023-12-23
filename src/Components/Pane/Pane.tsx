@@ -1,12 +1,13 @@
 import PaneProps from "../../Models/PaneModel";
 import React, { Component } from "react";
-import "../Dialog/Dialog.css";
+import "./Pane.css";
 
 const Pane: React.FC<PaneProps> = ({
   id,
   mode,
   style,
   children,
+  className,
   ...events
 }) => {
   const comps = ["Pane", "RadioGroup", "Slider", "Button"];
@@ -14,7 +15,11 @@ const Pane: React.FC<PaneProps> = ({
     <div
       id={id}
       style={style}
-      className={mode == "dark" ? "DialogBoxDark" : "DialogBoxLight"}
+      className={
+        mode == "dark"
+          ? "PaneDark" + " " + className
+          : "PaneLight" + " " + className
+      }
     >
       {React.Children.map(children, (component, index) => {
         console.log(component.type.name);

@@ -8,6 +8,7 @@ const RadioGroup: React.FC<RadioGroupProps> = ({
   children,
   onInteracted,
   mode,
+  className,
   style,
   ...events
 }) => {
@@ -28,11 +29,11 @@ const RadioGroup: React.FC<RadioGroupProps> = ({
     if (onInteracted) onInteracted(value, key, label);
   };
   return React.cloneElement(
-    <div id={id} style={style} className="RadioGroup">
+    <div id={id} className={"RadioGroup" + " " + className}>
       {React.Children.map(children, (element, index) => {
         return (
           <RadioButton
-            style={style.color ? { color: style.color } : {}}
+            style={style?.color ? { color: style?.color } : {}}
             key={index}
             checked={element.props.checked}
             index={index}

@@ -20,7 +20,8 @@ type ButtonProps = {
   id?: string;
   label: string;
   type: "normal" | "cancel";
-  mode: "3D" | "flat";
+  // design: "light" | "dark";
+  design: "glossy" | "flat";
   style?: React.CSSProperties;
   className?: string;
   mode?: "light" | "dark";

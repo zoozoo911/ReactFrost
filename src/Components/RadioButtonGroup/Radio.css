@@ -1,6 +1,6 @@
 .RadioButton {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-color: rgb(255 255 255 / 0%);
   -webkit-backdrop-filter: blur(15px);
@@ -16,15 +16,15 @@
 .RadioUnSelectedLight,
 .RadioUnSelectedDark,
 .RadioSelected {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   box-shadow: 0px 0px 3px 3px #08080894;
 }
 
 .RadioSelected {
   background: radial-gradient(
-    farthest-corner at 16px 18px,
+    farthest-corner at 10px 10px,
     rgb(0, 153, 255) 16%,
     rgb(0, 70, 175) 50%,
     rgb(62, 139, 255) 100%
@@ -51,7 +51,7 @@
 }
 
 .RadioButtonLabel {
-  font-size: 20px;
+  font-size: 17px;
   text-shadow: 0 0 10px black;
   color: black;
 }

@@ -4,6 +4,7 @@
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   border-radius: 30px;
+  box-sizing: content-box;
 }
 
 .PaneDark {
@@ -12,4 +13,9 @@
 
 .PaneLight {
   background-color: #ffffff70;
+}
+
+h1,
+h2 {
+  font-weight: 100;
 }

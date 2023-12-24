@@ -32,9 +32,10 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  padding: 20px;
+  justify-content: space-between;
   gap: 10px;
-  align-items: flex-start;
+  align-items: center;
   right: 30%;
   padding: 20px;
   bottom: 50%;
@@ -52,4 +53,11 @@
   right: 70%;
   bottom: 50%;
   transform: translate(50%, 50%);
+}
+
+.Textfield {
+  width: 250px;
+  height: fit-content;
+  font-size: 16px;
+  color: white;
 }

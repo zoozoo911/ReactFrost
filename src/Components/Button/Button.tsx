@@ -4,11 +4,11 @@ import ButtonProps from "../../Models/ButtonModel";
 import "./Button.css";
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const { style = {}, label, type, mode, ...events } = props;
+  const { style = {}, label, type, design, ...events } = props;
   const [customCSS, setCustomCSS] = useState<React.CSSProperties>({});
 
   useEffect(() => {
-    if (mode == "3D") {
+    if (design == "glossy") {
       const { backgroundColor, borderColor, color, ...otherStyleKeys } = style;
       setCustomCSS(otherStyleKeys);
     } else setCustomCSS(style);
@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     <div
       style={customCSS}
       className={
-        mode === "3D"
+        design === "glossy"
           ? type === "normal"
             ? `ButtonBlue`
             : `ButtonRed`

@@ -4,11 +4,22 @@ import RadioButton from "./Components/RadioButtonGroup/RadioButton";
 import RadioGroup from "./Components/RadioButtonGroup/RadioGroup";
 import Slider from "./Components/Slider/Slider";
 import Pane from "./Components/Pane/Pane";
+import TextField from "./Components/InputBox/TextField/TextField";
+import Button from "./Components/Button/Button";
 
 function App() {
   return (
     <div className="App">
       <Pane className="Pane" mode="light">
+        <h1>This is a</h1>
+        <TextField
+          placeholder="Enter something"
+          onEdited={(text) => {
+            console.log(text);
+          }}
+          responsive={false}
+          className="Textfield"
+        />
         <RadioGroup
           onInteracted={(value, index, label) => {
             console.log("label:" + label, "value:" + value, "index:" + index);
@@ -38,6 +49,12 @@ function App() {
             width: "80%",
           }}
         />
+        <Button
+          label="Click me"
+          type="normal"
+          design="glossy"
+          style={{ width: "50%", height: "40px" }}
+        />
       </Pane>
 
       <Dialog
@@ -50,7 +67,7 @@ function App() {
             onClick: () => console.log("button 1"),
             label: "test",
             type: "normal",
-            mode: "3D",
+            design: "glossy",
             style: {
               position: "relative",
               width: "50%",
@@ -61,7 +78,7 @@ function App() {
             onClick: () => console.log("button 2"),
             label: "test",
             type: "cancel",
-            mode: "3D",
+            design: "glossy",
             style: {
               color: "white",
               borderColor: "black",

@@ -1,6 +1,7 @@
 import Events from "../EventModel";
 
-type TextFieldProps = {
+type AlphanumbericFieldProps = {
+  charMode?: "text" | "number" | "password";
   id?: string;
   mode?: "light" | "dark";
   placeholder: string;
@@ -10,4 +11,8 @@ type TextFieldProps = {
   onEdited?: (text: string) => void;
 } & Omit<Events, onChange | onKeyPress | onKeyDown | onInput | onKeyUp>;
 
-export default TextFieldProps;
+type InputProps = {
+  type: "text" | "number" | "password";
+};
+
+export { InputProps, AlphanumbericFieldProps };

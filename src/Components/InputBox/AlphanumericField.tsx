@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import TextFieldProps from "../../../Models/InputModels/TextField";
-import "./TextField.css";
+import { AlphanumbericFieldProps } from "../../Models/InputFieldModel";
+import "./InputField.css";
 
-const TextField: React.FC<TextFieldProps> = ({
+const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
   placeholder,
+  charMode,
   id,
   style = {},
   className,
@@ -17,7 +18,7 @@ const TextField: React.FC<TextFieldProps> = ({
   }, [textValue]);
   return React.cloneElement(
     <input
-      type="text"
+      type={charMode}
       id={id}
       value={textValue}
       onChange={(e) => {
@@ -36,4 +37,4 @@ const TextField: React.FC<TextFieldProps> = ({
   );
 };
 
-export default TextField;
+export default AlphanumbericField;

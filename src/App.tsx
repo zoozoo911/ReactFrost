@@ -4,20 +4,22 @@ import RadioButton from "./Components/RadioButtonGroup/RadioButton";
 import RadioGroup from "./Components/RadioButtonGroup/RadioGroup";
 import Slider from "./Components/Slider/Slider";
 import Pane from "./Components/Pane/Pane";
-import TextField from "./Components/InputBox/TextField/TextField";
+import TextField from "./Components/InputBox/AlphanumericField";
 import Button from "./Components/Button/Button";
+import InputField from "./Components/InputBox/InputField";
 
 function App() {
   return (
     <div className="App">
       <Pane className="Pane" mode="light">
         <h1>This is a</h1>
-        <TextField
+        <InputField
+          type="password"
           placeholder="Enter something"
           onEdited={(text) => {
             console.log(text);
           }}
-          responsive={false}
+          responsive={true}
           className="Textfield"
         />
         <RadioGroup

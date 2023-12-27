@@ -66,3 +66,30 @@
   box-sizing: content-box;
   cursor: pointer;
 }
+
+/* For Firefox */
+.sliderBroadDark::-moz-range-thumb,
+.sliderBroadLight::-moz-range-thumb,
+.sliderThin::-moz-range-thumb {
+  border: 0px;
+  -moz-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: radial-gradient(
+    farthest-corner at 20px 20px,
+    rgb(0, 153, 255) 2%,
+    rgb(0, 70, 175) 50%,
+    rgb(62, 139, 255) 100%
+  );
+}
+
+.sliderBroadDark::-moz-range-thumb,
+.sliderBroadLight::-moz-range-thumb {
+  box-shadow: 0px 1px 6px 4px #08080894;
+}
+
+.sliderThin::-moz-range-thumb {
+  box-shadow: 0px 1px 6px 1px #08080894;
+}

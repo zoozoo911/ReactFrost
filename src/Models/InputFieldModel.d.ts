@@ -9,10 +9,18 @@ type AlphanumbericFieldProps = {
   className?: string;
   responsive: boolean;
   onEdited?: (text: string) => void;
-} & Omit<Events, onChange | onKeyPress | onKeyDown | onInput | onKeyUp>;
+} & Omit<
+  Events,
+  "onChange" | "onKeyPress" | "onKeyDown" | "onInput" | "onKeyUp"
+>;
+
+type SearchFieldProps = {
+  searchItems: any[];
+  selectedSearchItem?: (value: string) => void;
+} & Omit<AlphanumbericFieldProps, "responsive" | "charMode" | "onClick">;
 
 type InputProps = {
-  type: "text" | "number" | "password";
+  type: "text" | "number" | "password" | "search";
 };
 
-export { InputProps, AlphanumbericFieldProps };
+export { InputProps, AlphanumbericFieldProps, SearchFieldProps };

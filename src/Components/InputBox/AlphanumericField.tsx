@@ -1,10 +1,6 @@
 import React, { useCallback, useState, useEffect, useMemo } from "react";
 import "./InputField.css";
-import {
-  AlphanumbericFieldProps,
-  SearchFieldProps,
-} from "../../Models/InputFieldModel";
-import SearchIcon from "./search-line.svg";
+import { AlphanumbericFieldProps } from "../../Models/InputFieldModel";
 
 const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
   id,
@@ -22,8 +18,9 @@ const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
   const [textValue, setTextValue] = useState<string>("");
   const [passwordFieldAnimationState, setPasswordFieldAnimationState] =
     useState<boolean>(false);
-  const [searchButtonState, setSearchButtonState] =
-    useState<string>("SearchButton");
+  const [searchButtonState, setSearchButtonState] = useState<string>(
+    `SearchButton${mode == "dark" ? `Dark` : `Light`}`
+  );
   const handleContentChange = useCallback(
       (event: React.ChangeEvent<HTMLInputElement>) => {
         if (charMode == "password") {
@@ -66,7 +63,9 @@ const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
         animation: passwordFieldAnimationState ? "0.5s shake" : "",
       }}
       onBlur={() => {
-        setSearchButtonState("SearchButton");
+        setSearchButtonState(
+          `SearchButton${mode == "dark" ? `Dark` : `Light`}`
+        );
       }}
     >
       <div className={searchButtonState}>
@@ -74,8 +73,6 @@ const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
           style={{
             fontSize: "10px",
             height: "fit-content",
-            // paddingTop: charMode == "password" ? "5px" : "0px",
-            // paddingBottom: charMode != "password" ? "2px" : "0px",
           }}
         >
           {charMode == "text" ? "abc" : charMode == "password" ? "pass" : "123"}
@@ -97,7 +94,7 @@ const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
         style={{
           paddingLeft: "50px",
           borderColor: passwordFieldAnimationState ? "red" : "",
-          ...style, // Assuming `style` is a variable holding additional styles
+          ...style,
         }}
       />
     </div>,

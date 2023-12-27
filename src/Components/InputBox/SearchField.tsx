@@ -1,7 +1,8 @@
 import React, { useCallback, useState, useEffect, useMemo } from "react";
 import "./InputField.css";
 import { SearchFieldProps } from "../../Models/InputFieldModel";
-import SearchIcon from "../../Assets/search-line.svg";
+import SearchIconLight from "../../Assets/search-line.svg";
+import SearchIconDark from "../../Assets/search-line-black.svg";
 
 const SearchField: React.FC<SearchFieldProps> = ({
   id,
@@ -15,8 +16,9 @@ const SearchField: React.FC<SearchFieldProps> = ({
   ...events
 }) => {
   const [textValue, setTextValue] = useState<string>("");
-  const [searchButtonState, setSearchButtonState] =
-    useState<string>("SearchButton");
+  const [searchButtonState, setSearchButtonState] = useState<string>(
+    `SearchButton${mode == "dark" ? `Dark` : `Light`}`
+  );
   const [searchBoxVisibleState, setSearchBoxVisibleState] =
     useState<boolean>(false);
   const handleContentChange = useCallback(
@@ -39,11 +41,16 @@ const SearchField: React.FC<SearchFieldProps> = ({
     <div
       className={className}
       onBlur={() => {
-        setSearchButtonState("SearchButton");
+        setSearchButtonState(
+          `SearchButton${mode == "dark" ? `Dark` : `Light`}`
+        );
       }}
     >
       <div className={searchButtonState}>
-        <img style={{ width: "10px" }} src={SearchIcon}></img>
+        <img
+          style={{ width: "10px" }}
+          src={mode == "dark" ? SearchIconDark : SearchIconLight}
+        ></img>
       </div>
       <input
         onFocus={() => {

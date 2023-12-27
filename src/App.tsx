@@ -10,11 +10,11 @@ import InputField from "./Components/InputBox/InputField";
 function App() {
   return (
     <div className="App">
-      <Pane className="Pane" mode="light">
+      <Pane className="Pane" mode="dark">
         <div className="SubPane">
           {/* <h1 style={{ color: "black" }}>Title</h1> */}
           <InputField
-            mode="light"
+            mode="dark"
             type="number"
             placeholder="Enter some numbers"
             onEdited={(text) => {
@@ -24,7 +24,7 @@ function App() {
             className="Textfield"
           />
           <InputField
-            mode="light"
+            mode="dark"
             type="password"
             placeholder="Enter Password"
             onEdited={(text) => {
@@ -35,7 +35,7 @@ function App() {
             className="Textfield"
           />
           <InputField
-            mode="light"
+            mode="dark"
             type="text"
             placeholder="Enter some text"
             onEdited={(text) => {
@@ -45,7 +45,7 @@ function App() {
             className="Textfield"
           />
           <InputField
-            mode="light"
+            mode="dark"
             type="search"
             className="Textfield"
             placeholder="Search for something"
@@ -64,27 +64,27 @@ function App() {
             }}
           />
           <RadioGroup
-            mode="light"
+            mode="dark"
             onInteracted={(value, index, label) => {
               console.log("label:" + label, "value:" + value, "index:" + index);
             }}
             className="RadioGroupCSS"
           >
             <RadioButton
-              color="rgb(95, 95, 95)"
+              color="rgb(0, 0, 0)"
               checked={false}
               label="first rb"
               value={123}
             />
             <RadioButton
-              color="rgb(95, 95, 95)"
+              color="rgb(0, 0, 0)"
               checked={false}
               label="second rb"
               value={123}
             />
           </RadioGroup>
           <Slider
-            mode="light"
+            mode="dark"
             min={1}
             max={100}
             step={1}

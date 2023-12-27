@@ -29,7 +29,7 @@
 .TextFieldDark:focus {
   background: #4e4e4e61;
   border: 1px solid rgb(145, 145, 145);
-  color: rgb(255, 255, 255);
+  color: rgb(155, 155, 155);
 }
 
 @keyframes shake {
@@ -78,7 +78,7 @@
 
 .SearchPanelDark {
   background: rgb(58, 58, 58);
-  color: #9f9f9f;
+  color: #5c5c5c;
   box-shadow: 0px 0px 20px 9px #202020;
 }
 
@@ -106,7 +106,8 @@
   background-color: #dadada8f;
 }
 
-.SearchButton {
+.SearchButtonLight,
+.SearchButtonDark {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,6 +121,10 @@
   transform: translate(10px, -50%);
   background: rgb(145, 145, 145);
   transition: 0.5s all;
+}
+
+.SearchButtonDark {
+  color: black;
 }
 
 .SearchButtonActive {

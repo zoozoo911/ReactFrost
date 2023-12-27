@@ -14,6 +14,7 @@ const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
   validator,
   charMode,
   placeholder,
+  isValidated,
   onEdited,
   style,
   ...events
@@ -32,9 +33,14 @@ const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
               setPasswordFieldAnimationState(false);
               setTextValue(event.target.value);
             } else {
-              if (event.target.value.length == validator.charLimit)
+              if (event.target.value.length == validator.charLimit) {
                 setTextValue(event.target.value);
-              setPasswordFieldAnimationState(true);
+                if (event.target.value != validator.correctString) {
+                  setPasswordFieldAnimationState(true);
+                } else {
+                  if (isValidated) isValidated(true);
+                }
+              }
             }
           }
         } else setTextValue(event.target.value);

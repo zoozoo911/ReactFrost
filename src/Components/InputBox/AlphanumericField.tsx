@@ -11,6 +11,7 @@ const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
   className,
   mode,
   responsive,
+  validator,
   charMode,
   placeholder,
   onEdited,
@@ -18,11 +19,25 @@ const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
   ...events
 }) => {
   const [textValue, setTextValue] = useState<string>("");
+  const [passwordFieldAnimationState, setPasswordFieldAnimationState] =
+    useState<boolean>(false);
   const [searchButtonState, setSearchButtonState] =
     useState<string>("SearchButton");
   const handleContentChange = useCallback(
       (event: React.ChangeEvent<HTMLInputElement>) => {
-        setTextValue(event.target.value);
+        if (charMode == "password") {
+          if (validator) {
+            console.log("target->", event.target.value);
+            if (event.target.value.length < validator.charLimit) {
+              setPasswordFieldAnimationState(false);
+              setTextValue(event.target.value);
+            } else {
+              if (event.target.value.length == validator.charLimit)
+                setTextValue(event.target.value);
+              setPasswordFieldAnimationState(true);
+            }
+          }
+        } else setTextValue(event.target.value);
       },
       []
     ),
@@ -41,14 +56,24 @@ const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
   return React.cloneElement(
     <div
       className={className}
+      style={{
+        animation: passwordFieldAnimationState ? "0.5s shake" : "",
+      }}
       onBlur={() => {
         setSearchButtonState("SearchButton");
       }}
     >
       <div className={searchButtonState}>
-        <span style={{ fontSize: "12px", height: "20px" }}>
-          {charMode == "text" ? "abc" : charMode == "password" ? "***" : "123"}
-        </span>
+        <div
+          style={{
+            fontSize: "10px",
+            height: "fit-content",
+            // paddingTop: charMode == "password" ? "5px" : "0px",
+            // paddingBottom: charMode != "password" ? "2px" : "0px",
+          }}
+        >
+          {charMode == "text" ? "abc" : charMode == "password" ? "pass" : "123"}
+        </div>
       </div>
       <input
         type={charMode}
@@ -65,7 +90,8 @@ const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
         }  ${className} Container`}
         style={{
           paddingLeft: "50px",
-          ...style,
+          borderColor: passwordFieldAnimationState ? "red" : "",
+          ...style, // Assuming `style` is a variable holding additional styles
         }}
       />
     </div>,

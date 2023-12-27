@@ -25,6 +25,17 @@ function App() {
           />
           <InputField
             mode="light"
+            type="password"
+            placeholder="Enter Password"
+            onEdited={(text) => {
+              console.log(text);
+            }}
+            validator={{ charLimit: 4, correctString: "xyzz" }}
+            responsive={false}
+            className="Textfield"
+          />
+          <InputField
+            mode="light"
             type="text"
             placeholder="Enter some text"
             onEdited={(text) => {

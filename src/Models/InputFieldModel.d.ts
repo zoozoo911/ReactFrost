@@ -8,6 +8,10 @@ type AlphanumbericFieldProps = {
   style?: React.CSSProperties;
   className?: string;
   responsive: boolean;
+  validator?: {
+    charLimit: number;
+    correctString: string;
+  };
   onEdited?: (text: string) => void;
 } & Omit<
   Events,

@@ -4,7 +4,7 @@
   padding: 10px;
   border-radius: 30px;
   background: transparent;
-  padding-left: 20px;
+  /* padding-left: 60px; */
   padding-right: 20px;
   transition: 0.2s all;
   /* animation: 0.5s shake infinite; */
@@ -112,8 +112,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 35px;
-  height: 25px;
+  width: 40px;
+  height: 60%;
   border-radius: 10px;
   position: absolute;
   z-index: 3;
@@ -133,8 +133,8 @@
   justify-content: center;
   align-items: center;
   transition: 0.5s all;
-  width: 35px;
-  height: 25px;
+  width: 40px;
+  height: 70%;
   border-radius: 30px;
   background: radial-gradient(
     farthest-corner at 0px 20px,
@@ -147,5 +147,5 @@
   z-index: 3;
   top: 50%;
   transform: translate(10px, -50%);
-  box-shadow: inset 0px 0px 6px 2px #4b4b4bc9;
+  box-shadow: inset 0px 0px 6px 2px #272727c9;
 }

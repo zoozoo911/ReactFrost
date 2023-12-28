@@ -6,15 +6,16 @@ import Slider from "./Components/Slider/Slider";
 import Pane from "./Components/Pane/Pane";
 import Button from "./Components/Button/Button";
 import InputField from "./Components/InputBox/InputField";
+import Switcher from "./Components/ButtonGroup/Switcher";
 
 function App() {
   return (
     <div className="App">
-      <Pane className="Pane" mode="dark">
+      <Pane className="Pane" mode="light">
         <div className="SubPane">
           {/* <h1 style={{ color: "black" }}>Title</h1> */}
           <InputField
-            mode="dark"
+            mode="light"
             type="number"
             placeholder="Enter some numbers"
             onEdited={(text) => {
@@ -24,7 +25,7 @@ function App() {
             className="Textfield"
           />
           <InputField
-            mode="dark"
+            mode="light"
             type="password"
             placeholder="Enter Password"
             onEdited={(text) => {
@@ -35,7 +36,7 @@ function App() {
             className="Textfield"
           />
           <InputField
-            mode="dark"
+            mode="light"
             type="text"
             placeholder="Enter some text"
             onEdited={(text) => {
@@ -45,7 +46,7 @@ function App() {
             className="Textfield"
           />
           <InputField
-            mode="dark"
+            mode="light"
             type="search"
             className="Textfield"
             placeholder="Search for something"
@@ -64,27 +65,27 @@ function App() {
             }}
           />
           <RadioGroup
-            mode="dark"
+            mode="light"
             onInteracted={(value, index, label) => {
               console.log("label:" + label, "value:" + value, "index:" + index);
             }}
             className="RadioGroupCSS"
           >
             <RadioButton
-              color="rgb(0, 0, 0)"
+              color="rgb(95, 95, 95)"
               checked={false}
               label="first rb"
               value={123}
             />
             <RadioButton
-              color="rgb(0, 0, 0)"
+              color="rgb(95, 95, 95)"
               checked={false}
               label="second rb"
               value={123}
             />
           </RadioGroup>
           <Slider
-            mode="dark"
+            mode="light"
             min={1}
             max={100}
             step={1}
@@ -101,7 +102,15 @@ function App() {
             style={{ width: "150px", height: "40px", margin: "20px" }}
           />
         </div>
-        <div className="SubPane"></div>
+        <div className="SubPane">
+          <Switcher
+            mode="dark"
+            className="SwitcherCSS"
+            onSwitch={(switchValue) => {
+              console.log(switchValue);
+            }}
+          />
+        </div>
         <div className="SubPane"></div>
       </Pane>
       {/* <Dialog

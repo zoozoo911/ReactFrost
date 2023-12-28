@@ -4,7 +4,7 @@ import "./Pane.css";
 
 const Pane: React.FC<PaneProps> = ({
   id,
-  mode,
+  mode = "light",
   style,
   children,
   className,

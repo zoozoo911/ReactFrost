@@ -65,7 +65,7 @@ const SearchField: React.FC<SearchFieldProps> = ({
           mode === "light" ? `Light` : `Dark`
         }  ${className} Container`}
         style={{
-          paddingLeft: "50px",
+          paddingLeft: "60px",
           ...style,
         }}
       />

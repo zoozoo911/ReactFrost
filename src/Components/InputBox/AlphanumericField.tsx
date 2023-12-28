@@ -92,7 +92,7 @@ const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
           mode === "light" ? `Light` : `Dark`
         }  ${className} Container`}
         style={{
-          paddingLeft: "50px",
+          paddingLeft: "60px",
           borderColor: passwordFieldAnimationState ? "red" : "",
           ...style,
         }}

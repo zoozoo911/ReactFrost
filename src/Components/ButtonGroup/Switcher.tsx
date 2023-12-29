@@ -7,6 +7,7 @@ const Switcher: React.FC<SwitcherProps> = ({
   id,
   className,
   style,
+  defaultPosition,
   onSwitch,
   ...events
 }) => {
@@ -15,13 +16,16 @@ const Switcher: React.FC<SwitcherProps> = ({
   useEffect(() => {
     if (onSwitch) onSwitch(!switcherThumbPosition);
   }, [switcherThumbPosition]);
+  useEffect(() => {
+    setSwitcherThumbPosition(defaultPosition);
+  }, []);
   return React.cloneElement(
     <div
       style={{
         // background: switcherThumbPosition ? "yellowgreen" : "#ffffffa3",
         boxShadow: switcherThumbPosition
-          ? "inset 0px 0px 10px 0px rgb(0,0,0)"
-          : "inset 0px 0px 10px 2px #292929",
+          ? "inset 0px 0px 10px 2px #292929"
+          : "inset 0px 0px 10px 0px rgb(0,0,0)",
         ...style,
       }}
       className={`SwitchContainer ${className}`}
@@ -29,7 +33,7 @@ const Switcher: React.FC<SwitcherProps> = ({
       <div
         className="SwitcherOverlay"
         style={{
-          transform: `translateX(${switcherThumbPosition ? "-50%" : "0%"})`,
+          transform: `translateX(${switcherThumbPosition ? "0%" : "-50%"})`,
         }}
       >
         <div

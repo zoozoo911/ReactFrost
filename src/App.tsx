@@ -7,8 +7,11 @@ import Pane from "./Components/Pane/Pane";
 import Button from "./Components/Button/Button";
 import InputField from "./Components/InputBox/InputField";
 import Switcher from "./Components/ButtonGroup/Switcher";
+import BarLoader from "./Components/Loader/BarLoader";
+import { useState } from "react";
 
 function App() {
+  const [progress, setProgress] = useState<number>(0);
   return (
     <div className="App">
       <Pane className="Pane" mode="light">
@@ -89,7 +92,7 @@ function App() {
             min={1}
             max={100}
             step={1}
-            type="thin"
+            type="broad"
             style={{
               position: "relative",
               width: "200px",
@@ -105,11 +108,50 @@ function App() {
         <div className="SubPane">
           <Switcher
             mode="dark"
+            defaultPosition={true}
             className="SwitcherCSS"
             onSwitch={(switchValue) => {
               console.log(switchValue);
             }}
           />
+          <BarLoader
+            completionPercentage={progress}
+            style={{ width: "300px" }}
+          />
+          <div
+            style={{
+              display: "flex",
+              alignContent: "space-around",
+              flexDirection: "row",
+              gap: "10px",
+              width: "500px",
+            }}
+          >
+            <Button
+              label="Increase"
+              type="normal"
+              design="glossy"
+              onClick={() => setProgress(progress + 10)}
+              style={{
+                width: "fit-content",
+                paddingLeft: "30px",
+                paddingRight: "30px",
+                height: "40px",
+              }}
+            />
+            <Button
+              label="Decrease"
+              type="normal"
+              design="glossy"
+              onClick={() => setProgress(progress - 10)}
+              style={{
+                width: "fit-content",
+                paddingLeft: "30px",
+                paddingRight: "30px",
+                height: "40px",
+              }}
+            />
+          </div>
         </div>
         <div className="SubPane"></div>
       </Pane>

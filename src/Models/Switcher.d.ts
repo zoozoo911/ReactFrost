@@ -6,6 +6,7 @@ type SwitcherProps = {
   id?: string;
   className?: string;
   style?: React.CSSProperties;
+  defaultPosition: boolean;
 } & Omit<Events, "onClick" | "onChange">;
 
 export default SwitcherProps;

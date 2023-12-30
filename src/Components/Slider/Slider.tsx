@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import React from "react";
 import "./Slider.css";
 import SliderProps from "../../Models/SliderModel";
@@ -10,9 +10,13 @@ const Slider: React.FC<SliderProps> = ({
   step,
   mode,
   type,
+  value,
   className,
   ...events
 }) => {
+  const handleUpdate = useCallback((e: any) => {
+    if (value) value(e.target.value);
+  }, []);
   return React.cloneElement(
     <input
       style={style}
@@ -20,6 +24,9 @@ const Slider: React.FC<SliderProps> = ({
       min={min}
       step={step}
       max={max}
+      onChange={(e) => {
+        handleUpdate(e);
+      }}
       className={
         type == "thin"
           ? "sliderThin" + " " + className

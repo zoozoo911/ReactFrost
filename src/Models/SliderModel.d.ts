@@ -7,8 +7,9 @@ type SliderProps = {
   step: number;
   type: "thin" | "broad";
   mode?: "light" | "dark";
+  value?: (value: number) => void;
   style?: React.CSSProperties;
   className?: string;
-} & Events;
+} & Omit<Events, "onChange">;
 
 export default SliderProps;

@@ -93,6 +93,9 @@ function App() {
             max={100}
             step={1}
             type="broad"
+            onValueUpdate={(value) => {
+              console.log(value);
+            }}
             style={{
               position: "relative",
               width: "200px",

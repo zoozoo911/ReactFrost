@@ -10,12 +10,12 @@ const Slider: React.FC<SliderProps> = ({
   step,
   mode,
   type,
-  value,
+  onValueUpdate,
   className,
   ...events
 }) => {
   const handleUpdate = useCallback((e: any) => {
-    if (value) value(e.target.value);
+    if (onValueUpdate) onValueUpdate(e.target.value);
   }, []);
   return React.cloneElement(
     <input

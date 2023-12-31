@@ -1,8 +1,8 @@
-.SwitchContainer {
+.SwitchContainerDark,
+.SwitchContainerLight {
   height: 30px;
   width: 60px;
   border-radius: 30px;
-  background: #ffffffa3;
   z-index: 3;
   display: flex;
   flex-direction: row;
@@ -10,7 +10,6 @@
   /* padding: 0px 5px; */
   transition: 1s all;
   overflow: hidden;
-  border: 1px solid #6c6c6c61;
 }
 
 .SwitcherThumb {
@@ -40,7 +39,7 @@
     rgb(0 56 181) 50%,
     rgba(0, 159, 255, 1) 100%
   );
-  box-shadow: inset 0px 0px 10px 0px rgb(0, 0, 0);
+
   transition: 0.2s all;
   width: 100%;
   height: 100%;
@@ -48,4 +47,14 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.SwitchContainerDark {
+  border: 2px solid #111111a1;
+  background: #535353a3;
+}
+
+.SwitchContainerLight {
+  border: 1px solid #6c6c6c61;
+  background: #ffffffa3;
 }

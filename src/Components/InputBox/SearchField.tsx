@@ -1,8 +1,8 @@
 import React, { useCallback, useState, useEffect, useMemo } from "react";
 import "./InputField.css";
 import { SearchFieldProps } from "../../Models/InputFieldModel";
-import SearchIconLight from "../../Assets/search-line.svg";
 import SearchIconDark from "../../Assets/search-line-black.svg";
+import SearchIconLight from "../../Assets/search-white.svg";
 
 const SearchField: React.FC<SearchFieldProps> = ({
   id,
@@ -27,7 +27,7 @@ const SearchField: React.FC<SearchFieldProps> = ({
       if (event.target.value != "") setSearchBoxVisibleState(true);
       else setSearchBoxVisibleState(false);
     },
-    []
+    [textValue, searchButtonState]
   );
   useEffect(() => {
     if (onEdited) onEdited(textValue);
@@ -49,12 +49,20 @@ const SearchField: React.FC<SearchFieldProps> = ({
       <div className={searchButtonState}>
         <img
           style={{ width: "10px" }}
-          src={mode == "dark" ? SearchIconDark : SearchIconLight}
+          src={
+            searchButtonState.includes("Active")
+              ? SearchIconLight
+              : mode == "dark"
+              ? SearchIconDark
+              : SearchIconLight
+          }
         ></img>
       </div>
       <input
         onFocus={() => {
-          setSearchButtonState("SearchButtonActive");
+          setSearchButtonState(
+            `SearchButtonActive${mode == "dark" ? `Dark` : `Light`}`
+          );
         }}
         type="text"
         id={id}

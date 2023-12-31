@@ -28,7 +28,9 @@ const Switcher: React.FC<SwitcherProps> = ({
           : "inset 0px 0px 10px 0px rgb(0,0,0)",
         ...style,
       }}
-      className={`SwitchContainer ${className}`}
+      className={`SwitchContainer${
+        mode == "dark" ? `Dark` : `Light`
+      } ${className}`}
     >
       <div
         className="SwitcherOverlay"

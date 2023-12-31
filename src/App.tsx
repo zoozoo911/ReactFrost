@@ -92,7 +92,7 @@ function App() {
             min={1}
             max={100}
             step={1}
-            type="broad"
+            type="thin"
             onValueUpdate={(value) => {
               console.log(value);
             }}
@@ -110,7 +110,7 @@ function App() {
         </div>
         <div className="SubPane">
           <Switcher
-            mode="dark"
+            mode="light"
             defaultPosition={true}
             className="SwitcherCSS"
             onSwitch={(switchValue) => {
@@ -119,6 +119,7 @@ function App() {
           />
           <BarLoader
             completionPercentage={progress}
+            mode="light"
             style={{ width: "300px" }}
           />
           <div
@@ -156,40 +157,7 @@ function App() {
             />
           </div>
         </div>
-        <div className="SubPane"></div>
       </Pane>
-      {/* <Dialog
-        title="Hello"
-        body="example text"
-        mode="light"
-        className="DialogCSS"
-        buttons={[
-          {
-            onClick: () => console.log("button 1"),
-            label: "test",
-            type: "normal",
-            design: "glossy",
-            style: {
-              position: "relative",
-              width: "50%",
-              height: "40px",
-            },
-          },
-          {
-            onClick: () => console.log("button 2"),
-            label: "test",
-            type: "cancel",
-            design: "glossy",
-            style: {
-              color: "white",
-              borderColor: "black",
-              position: "relative",
-              width: "50%",
-              height: "40px",
-            },
-          },
-        ]}
-      /> */}
     </div>
   );
 }

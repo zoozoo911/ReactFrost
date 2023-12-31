@@ -4,32 +4,32 @@
   padding: 10px;
   border-radius: 30px;
   background: transparent;
-  /* padding-left: 60px; */
   padding-right: 20px;
   transition: 0.2s all;
-  /* animation: 0.5s shake infinite; */
 }
 
 .TextFieldLight {
-  border: 0.5px solid #9b9b9bf0;
+  border: 1px solid #9e9e9ef0;
   color: rgb(83, 83, 83);
 }
 
 .TextFieldDark {
-  border: 0.5px solid #9b9b9bf0;
-  color: rgb(197, 197, 197);
+  border: 2px solid #7c7c7ca1;
+  color: rgb(236, 236, 236);
 }
 
 .TextFieldLight:focus {
   background: #c1c1c161;
-  border: 1px solid rgb(145, 145, 145);
+  border: 3px solid rgb(0, 89, 223);
   color: rgb(83, 83, 83);
+  box-shadow: inset 0px 1px 4px 0px rgba(92, 92, 92, 0.733);
 }
 
 .TextFieldDark:focus {
-  background: #4e4e4e61;
-  border: 1px solid rgb(145, 145, 145);
-  color: rgb(155, 155, 155);
+  border: 4px solid rgb(0, 73, 184);
+  color: rgb(236, 236, 236);
+  background: #535353a3;
+  box-shadow: inset 0px 1px 16px 0px #000b;
 }
 
 @keyframes shake {
@@ -113,8 +113,8 @@
   justify-content: center;
   align-items: center;
   width: 40px;
-  height: 60%;
-  border-radius: 10px;
+  height: 50%;
+  border-radius: 30px;
   position: absolute;
   z-index: 3;
   top: 50%;
@@ -127,14 +127,15 @@
   color: black;
 }
 
-.SearchButtonActive {
+.SearchButtonActiveLight,
+.SearchButtonActiveDark {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: 0.5s all;
   width: 40px;
-  height: 70%;
+  height: 50%;
   border-radius: 30px;
   background: radial-gradient(
     farthest-corner at 0px 20px,
@@ -147,5 +148,12 @@
   z-index: 3;
   top: 50%;
   transform: translate(10px, -50%);
-  box-shadow: inset 0px 0px 6px 2px #272727c9;
+}
+
+.SearchButtonActiveLight {
+  box-shadow: inset 0px 0px 6px 2px #272727c9, 0px 0px 6px 2px #2727277a;
+}
+
+.SearchButtonActiveDark {
+  box-shadow: 0px 0px 16px 6px #272727c9;
 }

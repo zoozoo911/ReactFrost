@@ -81,7 +81,9 @@ const AlphanumbericField: React.FC<AlphanumbericFieldProps> = ({
       <input
         type={charMode}
         onFocus={() => {
-          setSearchButtonState("SearchButtonActive");
+          setSearchButtonState(
+            `SearchButtonActive${mode == "dark" ? `Dark` : `Light`}`
+          );
         }}
         id={id}
         value={textValue}
